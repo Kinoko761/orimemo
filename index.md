@@ -36,7 +36,8 @@ $$
 
 別の書き方もできます。
 
-\[P(x)=
+\[
+P(x)=
 \frac{1}{Z}
 \exp\left(-\sum_a \lambda_a A_a(x)\right)
 \]
