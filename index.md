@@ -42,4 +42,36 @@ $$
 \rho_\beta (x) = \frac{e^{-\beta H(x)}}{Z(\beta)}
 $$
 
-となる．とりあえず現段階では，分配関数はただの規格化因子（の逆数）．
+となる．とりあえず現段階では，分配関数はただの規格化因子の逆数．
+
+## 期待値とモーメント
+
+確率密度関数 $\rho(x)$ が決まったので，微視的状態$x$ごとに決まる物理量 $A(x)$ の期待値は
+
+$$
+\langle A \rangle_\beta = \int_\Gamma dx \ A(x)\rho_\beta(x)
+$$
+
+のように書ける．特に，ハミルトニアン $H(x)$ の期待値は内部エネルギー $U$ と呼ばれていて
+
+$$
+U_\beta = \langle H(x) \rangle_\beta = \int_\Gamma dx \ H(x)\rho_\beta(x)
+$$
+
+である．期待値（＝1次モーメント）だけでなく， $n$ 次のモーメントも求めることができる．物理量 $A$ の2次の（中心化されていない）モーメントは
+
+$$
+\langle A^2 \rangle_\beta = \int_\Gamma dx \ A(x)^2\rho_\beta(x)
+$$
+
+となる．1次と2次のモーメントを使えば分散を求めることができる．
+
+$$
+\langle\langle A(x) \rangle\rangle_\beta = \langle A^2 \rangle_\beta - \langle A \rangle_\beta^2
+$$
+
+ただし $\langle\langle A \rangle\rangle$ は独自の記号で分散 $\mathrm{Var}[A]$ を表すことにする． 
+
+## 累積分布関数と母関数
+
+確率密度関数 $\rho(x)$ が決まったので，累積分布関数や各種の母関数（確率母関数，積率母関数，モーメント母関数，特性関数）が決まるはず．
