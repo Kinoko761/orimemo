@@ -30,7 +30,7 @@ $$
 Z(\beta)=
 \int_{\Gamma}
 \exp[-\beta H(q,p)]
-\,dq\,dp
+\thinspace dq\thinspace dp
 $$
 
 別の書き方もできます。
