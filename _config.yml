@@ -1,0 +1,3 @@
+# kramdownに数式記法（MathJax/KaTeX）を無視させてそのままHTMLに出力させる設定
+kramdown:
+  math_engine: null
