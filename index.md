@@ -14,7 +14,7 @@ window.MathJax = {
 
 # 数式
 
-インライン数式：$E = mc^2$
+インライン数式： $E = mc^2$
 
 
 $$
@@ -24,22 +24,19 @@ $$
 # 数式のテスト
 
 インライン数式は $E = mc^2$ のように書きます。
-
 ディスプレイ数式は次のように書きます。
 
 $$
-Z(\beta)
-=
+Z(\beta)=
 \int_{\Gamma}
-\exp\left[-\beta H(q,p)\right]
+\exp[-\beta H(q,p)]
 \,dq\,dp
 $$
 
 別の書き方もできます。
 
 $$
-P(x)
-=
+P(x)=
 \frac{1}{Z}
 \exp\left(-\sum_a \lambda_a A_a(x)\right)
 $$
