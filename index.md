@@ -1,3 +1,8 @@
+---
+layout: default
+title: マイページ
+---
+
 # KaTeX による数式表示
 
 インライン表記: $\mathcal{L}_{\text{CI}} = \langle \Psi | \hat{H} | \Psi \rangle$
