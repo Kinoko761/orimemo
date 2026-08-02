@@ -1,14 +1,27 @@
 ---
 layout: default
-title: マイページ
+title: 数式のテスト
 ---
 
-# KaTeX による数式表示
+# 数式のテスト
 
-インライン表記: $\mathcal{L}_{\text{CI}} = \langle \Psi | \hat{H} | \Psi \rangle$
+インライン数式は $E = mc^2$ のように書きます。
 
-ディスプレイ表記:
+ディスプレイ数式は次のように書きます。
 
 $$
-\hat{H} = -\sum_{i} \frac{1}{2} \nabla_i^2 - \sum_{A} \frac{1}{2M_A} \nabla_A^2 - \sum_{i,A} \frac{Z_A}{r_{iA}} + \sum_{i < j} \frac{1}{r_{ij}} + \sum_{A < B} \frac{Z_A Z_B}{R_{AB}}
+Z(\beta)
+=
+\int_{\Gamma}
+\exp\left[-\beta H(q,p)\right]
+\,dq\,dp
 $$
+
+別の書き方もできます。
+
+\[
+P(x)
+=
+\frac{1}{Z}
+\exp\left(-\sum_a \lambda_a A_a(x)\right)
+\]
