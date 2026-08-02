@@ -1,3 +1,7 @@
-# kramdownに数式記法（MathJax/KaTeX）を無視させてそのままHTMLに出力させる設定
+title: My GitHub Pages
+
+theme: jekyll-theme-minimal
+
+markdown: kramdown
 kramdown:
-  math_engine: null
+  math_engine: mathjax
