@@ -12,31 +12,26 @@ window.MathJax = {
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 
-# 数式
+## 関心事
 
-インライン数式： $E = mc^2$
+微視的状態つまり位相空間上の点を根元事象 $x \in \Gamma$ と考え，ハミルトニアン $H(x)$ を確率変数として， $E=H(x)$ が実現する確率が $e^{-\beta E}$ に比例することを天下りに認めることにする．統計力学を確率・統計の言葉でどこまで説明できるだろうか．
 
+## 確率密度関数と分配関数
 
-$$
-F = -\nabla U
-$$
-
-# 数式のテスト
-
-インライン数式は $E = mc^2$ のように書きます。
-ディスプレイ数式は次のように書きます。
+確率密度関数を $\rho_\beta (x) \propto e^{-\beta H(x)}$ とする．確率密度関数を位相空間 $\Gamma$ 全体で積分すると1にならなければならないので，規格化因子を $N_\beta$ とすると
 
 $$
-Z(\beta)=
-\int_{\Gamma}
-\exp[-\beta H(q,p)]
-\thinspace dq\thinspace dp
+\int_\Gamma dx \ N_\beta\rho_\beta (x)  = N_\beta \int_\Gamma dx \ e^{-\beta H(x)}  =  1
 $$
 
-別の書き方もできます。
+したがって
 
 $$
-P(x)=
-\frac{1}{Z}
-\exp\left(-\sum_a \lambda_a A_a(x)\right)
+N_\beta = \frac{1}{\int_\Gamma dx \ e^{-\beta H(x)}}
+$$
+
+右辺の分母を**分配関数**$Z(\beta)$という．
+
+$$
+Z(\beta) = \int_\Gamma dx \ e^{-\beta H(x)}
 $$
