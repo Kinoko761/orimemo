@@ -1,7 +1,24 @@
 ---
 layout: default
-title: 数式のテスト
 ---
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+
+# 数式
+
+インライン数式：$E = mc^2$
+
+$$
+F = -\nabla U
+$$
 
 # 数式のテスト
 
