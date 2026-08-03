@@ -109,6 +109,11 @@ $$
 \langle A \rangle_\beta &= \left.\frac{\partial K_H(t)}{\partial t} \right\vert_{t=0} 
 \newline &= \left.\frac{\partial \ln Z(t-\beta)}{\partial t} \right\vert_{t=0}  
 \newline &= -\frac{\partial \ln Z(\beta)}{\partial \beta} 
+\end{align}
+$$
+となり，エネルギーの期待値は分配関数の対数 $\ln Z(\beta)$を使ってシンプルに書けることが分かる．ちなみに，このまま計算を続けていくと
+$$
+\begin{align}
 \newline &= -\frac{1}{Z(\beta)}\frac{\partial Z(\beta)}{\partial \beta}
 \newline &= -\frac{1}{Z(\beta)}\frac{\partial}{\partial \beta} \int_\Gamma dx e^{-\beta H(x)}
 \newline &= \frac{1}{Z(\beta)} \int_\Gamma dx \  H(x) e^{-\beta H(x)}
@@ -116,9 +121,9 @@ $$
 \end{align}
 $$
 
-となり，確かに $H(x)$ の期待値になっている．重要なのは3行目．エネルギーの期待値は分配関数の対数 $\ln Z(\beta)$を使ってシンプルに書けることが分かる．
+となり，確かに $H(x)$ の期待値になっている．
 
-2次中心化モーメントも計算してみる．
+2次中心化モーメントも分配関数の偏微分で書けることがわかる．
 
 $$
 \begin{align}
@@ -127,3 +132,11 @@ $$
 \newline &= \frac{\partial^2 \ln Z(\beta)}{\partial \beta^2} 
 \end{align}
 $$
+
+## ヘルムホルツ自由エネルギーとの関係
+
+分配関数 $Z(\beta)$ の対数 $\ln Z(\beta)$ は，ヘルムホルツ自由エネルギー $F$ と次のような関係にある．
+$$
+F = -\frac{1}{\beta} \ln Z(\beta)
+$$
+ということで，符号が異なるだけである．しかし，なんでそうなるのかはこの時点では説明できない．
