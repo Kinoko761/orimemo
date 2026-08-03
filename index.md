@@ -112,6 +112,7 @@ $$
 \end{align}
 $$
 となり，エネルギーの期待値は分配関数の対数 $\ln Z(\beta)$を使ってシンプルに書けることが分かる．ちなみに，このまま計算を続けていくと
+
 $$
 \begin{align}
 \newline &= -\frac{1}{Z(\beta)}\frac{\partial Z(\beta)}{\partial \beta}
