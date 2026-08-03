@@ -122,7 +122,8 @@ $$
 
 $$
 \begin{align}
-\mathrm{Var}[A(x)]_\beta &= \left.\frac{\partial^2 K_H(t)}{\partial t^2} \right\vert_{t=0} 
+\mathrm{Var}_\beta[A(x)] &= \left.\frac{\partial^2 K_H(t)}{\partial t^2} \right\vert_{t=0} 
 \newline &= \left.\frac{\partial^2 \ln Z(t-\beta)}{\partial t^2} \right\vert_{t=0}  
+\newline &= \frac{\partial^2 \ln Z(\beta)}{\partial \beta^2} 
 \end{align}
 $$
