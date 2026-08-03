@@ -102,4 +102,27 @@ $$
 K_H(t) = \ln M_H(t) = \ln Z(\beta -t) - \ln Z(\beta)
 $$
 
-キュムラント母関数の1次，2次の微分係数は，1次，2次の中心化モーメント（期待値および分散）を与える．
+キュムラント母関数の1次，2次の微分係数は，1次，2次の中心化モーメント（期待値および分散）を与える．実際に1次モーメントを計算してみると
+
+$$
+\begin{align}
+\langle A \rangle_\beta &= \left.\frac{\partial K_H(t)}{\partial t} \right\vert_{t=0} 
+\newline &= \left.\frac{\partial \ln Z(t-\beta)}{\partial t} \right\vert_{t=0}  
+\newline &= -\frac{\partial \ln Z(\beta)}{\partial \beta} 
+\newline &= -\frac{1}{Z(\beta)}\frac{\partial Z(\beta)}{\partial \beta}
+\newline &= -\frac{1}{Z(\beta)}\frac{\partial}{\partial \beta} \int_\Gamma dx e^{-\beta H(x)}
+\newline &= \frac{1}{Z(\beta)} \int_\Gamma dx \  H(x) e^{-\beta H(x)}
+\newline &= \int_\Gamma dx \ H(x) \rho_\beta(x)
+\end{align}
+$$
+
+となり，確かに $H(x)$ の期待値になっている．重要なのは3行目．エネルギーの期待値は分配関数の対数 $\ln Z(\beta)$を使ってシンプルに書けることが分かる．
+
+2次中心化モーメントも計算してみる．
+
+$$
+\begin{align}
+\mathrm{Var}[A(x)]_\beta &= \left.\frac{\partial^2 K_H(t)}{\partial t^2} \right\vert_{t=0} 
+\newline &= \left.\frac{\partial^2 \ln Z(t-\beta)}{\partial t^2} \right\vert_{t=0}  
+\end{align}
+$$
