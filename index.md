@@ -108,9 +108,8 @@ $$
 
 $$
 \begin{align}
-\langle A \rangle_\beta &= \left.\frac{\partial K_H(t)}{\partial t} \right\vert_{t=0} 
-\newline &= \left.\frac{\partial \ln Z(t-\beta)}{\partial t} \right\vert_{t=0}  
-\newline &= -\frac{\partial \ln Z(\beta)}{\partial \beta} 
+\langle A \rangle &= \left.\frac{\partial K_A(t)}{\partial t} \right\vert_{t=0} 
+\newline &= \left.\frac{\partial}{\partial t} \ln Z\left[H-\frac{t}{\beta}A\right] \right\vert_{t=0}  
 \end{align}
 $$
 
