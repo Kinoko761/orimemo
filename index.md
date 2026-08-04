@@ -110,6 +110,7 @@ $$
 \begin{align}
 \langle A \rangle &= \left.\frac{\partial K_A(t)}{\partial t} \right\vert_{t=0} 
 \newline &= \left.\frac{\partial}{\partial t} \ln Z\left[H-\frac{t}{\beta}A\right] \right\vert_{t=0}  
+\newline &= \left.\frac{1}{\beta}\frac{\partial}{\partial \lambda} \ln Z\left[H-\lambda A\right] \right\vert_{\lambda=0}  
 \end{align}
 $$
 
