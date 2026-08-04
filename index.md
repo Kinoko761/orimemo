@@ -18,35 +18,35 @@ $N$ 粒子系の一つの微視的状態は，位相空間 $\Gamma$ 上の1つ�
 
 ## 確率密度関数と分配関数
 
-確率密度関数を $\rho_\beta (x) \propto e^{-\beta H(x)}$ とする．確率密度関数を位相空間 $\Gamma$ 全体で積分すると1にならなければならないので，規格化因子を $N_\beta$ とすると
+確率密度関数を $\rho(x) \propto e^{-\beta H(x)}$ とする．確率密度関数を位相空間 $\Gamma$ 全体で積分すると1にならなければならないので，規格化因子を $k$ とすると
 
 $$
-\int_\Gamma dx \ N_\beta\rho_\beta (x)  = N_\beta \int_\Gamma dx \ e^{-\beta H(x)}  =  1
+\int_\Gamma dx \ k\rho(x)  = k \int_\Gamma dx \ e^{-\beta H(x)}  =  1
 $$
 
 したがって
 
 $$
-N_\beta = \frac{1}{\int_\Gamma dx \ e^{-\beta H(x)}}
+k = \frac{1}{\int_\Gamma dx \ e^{-\beta H(x)}}
 $$
 
-右辺の分母を**分配関数**$Z(\beta)$という．
+右辺の分母を**分配関数**$Z[H]$という．
 
 $$
-Z(\beta) = \int_\Gamma dx \ e^{-\beta H(x)}
+Z[H] = \int_\Gamma dx \ e^{-\beta H(x)}
 $$
 
 分配関数を用いて確率密度関数を書くと
 
 $$
-\rho_\beta (x) = \frac{e^{-\beta H(x)}}{Z(\beta)}
+\rho(x) = \frac{e^{-\beta H(x)}}{Z[H]}
 $$
 
-となる．とりあえず現段階では，分配関数 $Z(\beta)$ はただの規格化因子の逆数ということになる． $Z(\beta)$ はボルツマン因子を $x$ について積分したものだから，変数に $x$ は含まれないが， $\beta$ が含まれる．
+となる．とりあえず現段階では，分配関数 $Z(\beta)$ はただの規格化因子の逆数ということになる．ここで分配関数はハミルトニアンについての汎関数であることを強調した．
 
 ### この確率密度関数は可視化できる？
 
-$x$ は位相空間上の点 $(\mathbf{p},\mathbf{q})$ だから多次元( $N$粒子系なら $6N$ 次元)のベクトル．したがって確率密度関数 $\rho_\beta (x) $ は多次元空間における超曲面になるので，単純には可視化できない． $x$ から特定の2自由度だけ抜き出せば3次元空間上に曲面として描くことができる．
+$x$ は位相空間上の点 $(\mathbf{p},\mathbf{q})$ だから多次元( $N$粒子系なら $6N$ 次元)のベクトル．したがって確率密度関数 $\rho(x)$ は多次元空間における超曲面になるので，単純には可視化できない． $x$ から特定の2自由度だけ抜き出せば3次元空間上に曲面として描くことができる．
 
 ### 累積分布関数はない？
 
@@ -64,19 +64,19 @@ $$
 のように書ける（物理では $A$ の期待値を $\mathrm{E}[A]$ のかわりに $\langle A \rangle$ で表す）．実験的に決定されるマクロな物理量は，すべて期待値である．特に，ハミルトニアン $H(x)$ の期待値は内部エネルギー $U$ と呼ばれていて
 
 $$
-U_\beta = \langle H(x) \rangle_\beta = \int_\Gamma dx \ H(x)\rho_\beta(x)
+U = \langle H(x) \rangle = \int_\Gamma dx \ H(x)\rho(x)
 $$
 
 である．期待値（＝1次モーメント）だけでなく， $n$ 次のモーメントも求めることができる．物理量 $A$ の2次の（中心化されていない）モーメントは
 
 $$
-\langle A^2 \rangle_\beta = \int_\Gamma dx \ A(x)^2\rho_\beta(x)
+\langle A^2 \rangle = \int_\Gamma dx \ A(x)^2\rho(x)
 $$
 
 となる．1次と2次のモーメントを使えば分散（2次の中心化モーメント）を求めることができる．
 
 $$
- \mathrm{Var}_\beta[A(x)] = \langle A^2 \rangle_\beta - \langle A \rangle_\beta^2
+ \mathrm{Var}[A(x)] = \langle A^2 \rangle - \langle A \rangle^2
 $$
 
 
@@ -85,24 +85,26 @@ $$
 
 ## キュムラント母関数とその微分係数
 
-確率密度関数 $\rho(x)$ と確率変数 $A(x)$ が決まれば，各種の母関数（確率母関数，モーメント母関数，キュムラント母関数，特性関数）が決まるはず．確率変数の中でも最も重要なハミルトニアン $H(x)$ に関して，モーメント母関数とキュムラント母関数を求めてみる．
-
-確率変数 $H(x)$ のモーメント母関数 $M_H(t)$ は $e^{tH(x)}$の期待値である．
+確率密度関数 $\rho(x)$ と確率変数 $A(x)$ が決まれば，各種の母関数（確率母関数，モーメント母関数，キュムラント母関数，特性関数）が決まるはず．そこで，モーメント母関数とキュムラント母関数を求めてみる．確率変数 $A(x)$ のモーメント母関数 $M_A(t)$ は $e^{tA(x)}$の期待値である．
 
 $$
 \begin{eqnarray}
-M_H(t) &= \int_\Gamma dx \ e^{tH(x)}\rho_\beta(x) = \int_\Gamma dx \ e^{tH(x)}\frac{e^{-\beta H(x)}}{Z(\beta)} \\ &= 
-\frac{1}{Z(\beta)}\int_\Gamma dx \ e^{(t-\beta)H(x)} = \frac{Z(\beta -t)}{Z(\beta)}
+M_A(t) &= \int_\Gamma dx \ e^{tA(x)}\rho(x) 
+\newline &= \int_\Gamma dx \ e^{tA(x)}\frac{e^{-\beta H(x)}}{Z[H]} 
+\newline &= \frac{1}{Z[H]}\int_\Gamma dx \ e^{-\beta\left(H(x) - \displaystyle\frac{t}{\beta}A(x)\right)} 
+\newline &= \frac{Z\left[H-\displaystyle\frac{t}{\beta}A\right]}{Z[H]}
 \end{eqnarray}
 $$
 
-確率変数 $H(x)$ のキュムラント母関数 $H_H(t)$ はモーメント母関数の対数をとったものである．
+確率変数 $A(x)$ のキュムラント母関数 $K_A(t)$ はモーメント母関数の対数をとったものである．
 
 $$
-K_H(t) = \ln M_H(t) = \ln Z(\beta -t) - \ln Z(\beta)
+K_A(t) = \ln M_A(t) = \ln Z\left[H-\frac{t}{\beta}A\right] - \ln Z[H]
 $$
 
-キュムラント母関数の1次，2次の微分係数は，1次，2次の中心化モーメント（期待値および分散）を与える．実際に1次モーメントを計算してみると
+上のように，モーメント母関数とキュムラント母関数は分配関数だけで書くことができる．特に $Z\left[H-\frac{t}{\beta}A\right]$ は，物理量 $A$ に共役な外場 $t/\beta$ を摂動として加えた系の分配関数であると解釈できる．
+
+キュムラント母関数の原点における1次および2次微分係数は，1次および2次の中心化モーメント（期待値および分散）を与える．実際に1次モーメントを計算してみると
 
 $$
 \begin{align}
