@@ -18,10 +18,10 @@ $N$ 粒子系の一つの微視的状態は，位相空間 $\Gamma$ 上の1つ�
 
 ## 確率密度関数と分配関数
 
-確率密度関数を $\rho(x) \propto e^{-\beta H(x)}$ とする．確率密度関数を位相空間 $\Gamma$ 全体で積分すると1にならなければならないので，規格化因子を $k$ とすると
+確率密度関数を $\rho_H(x) \propto e^{-\beta H(x)}$ とする．確率密度関数を位相空間 $\Gamma$ 全体で積分すると1にならなければならないので，規格化因子を $k$ とすると
 
 $$
-\int_\Gamma dx \ k\rho(x)  = k \int_\Gamma dx \ e^{-\beta H(x)}  =  1
+\int_\Gamma dx \ k\rho_H(x)  = k \int_\Gamma dx \ e^{-\beta H(x)}  =  1
 $$
 
 したがって
@@ -39,7 +39,7 @@ $$
 分配関数を用いて確率密度関数を書くと
 
 $$
-\rho(x) = \frac{e^{-\beta H(x)}}{Z[H]}
+\rho_H(x) = \frac{e^{-\beta H(x)}}{Z[H]}
 $$
 
 となる．とりあえず現段階では，分配関数 $Z(\beta)$ はただの規格化因子の逆数ということになる．ここで分配関数はハミルトニアンについての汎関数であることを強調した．
@@ -50,33 +50,33 @@ $x$ は位相空間上の点 $(\mathbf{p},\mathbf{q})$ だから多次元( $N$�
 
 ### 累積分布関数はない？
 
-確率密度関数 $\rho(x)$ が決まったので，累積分布関数が決まるはず．確率論では確率密度関数よりも，それを積分した累積分布関数を考えるほうがいろいろと都合がよい気がする．しかし，ここで考えている確率密度関数の変数 $x$ は多次元ベクトルだから，単純に「 $x \leq x_0$ 」のような大小関係が存在しない．よって「 $-\infty$ から $x_0$ まで積分」みたいなこともできない．この意味では「累積分布関数」に相当するものはないと言える．ただし，「どこからどこまで累積する（積分する）か」を決めればよいわけだから，「 $\Gamma$ の特定の領域 $\Gamma_0 \subset \Gamma$ について積分する」ということはできる．そう考えると，分配関数はボルツマン因子を $\Gamma$ の全領域で積分したものだから，これは「規格化されていない累積分布関数」みたいなものかもしれない．
+確率密度関数 $\rho_H(x)$ が決まったので，累積分布関数が決まるはず．確率論では確率密度関数よりも，それを積分した累積分布関数を考えるほうがいろいろと都合がよい気がする．しかし，ここで考えている確率密度関数の変数 $x$ は多次元ベクトルだから，単純に「 $x \leq x_0$ 」のような大小関係が存在しない．よって「 $-\infty$ から $x_0$ まで積分」みたいなこともできない．この意味では「累積分布関数」に相当するものはないと言える．ただし，「どこからどこまで累積する（積分する）か」を決めればよいわけだから，「 $\Gamma$ の特定の領域 $\Gamma_0 \subset \Gamma$ について積分する」ということはできる．そう考えると，分配関数はボルツマン因子を $\Gamma$ の全領域で積分したものだから，これは「規格化されていない累積分布関数」みたいなものかもしれない．
 
 
 ## 期待値とモーメント
 
-確率密度関数 $\rho(x)$ が決まったので，微視的状態 $x$ ごとに決まる物理量 $A(x)$ の期待値は
+確率密度関数 $\rho_H(x)$ が決まったので，微視的状態 $x$ ごとに決まる物理量 $A(x)$ の期待値は
 
 $$
-\langle A \rangle_\beta = \int_\Gamma dx \ A(x)\rho_\beta(x)
+\langle A \rangle_H = \int_\Gamma dx \ A(x)\rho_H(x)
 $$
 
 のように書ける（物理では $A$ の期待値を $\mathrm{E}[A]$ のかわりに $\langle A \rangle$ で表す）．実験的に決定されるマクロな物理量は，すべて期待値である．特に，ハミルトニアン $H(x)$ の期待値は内部エネルギー $U$ と呼ばれていて
 
 $$
-U = \langle H(x) \rangle = \int_\Gamma dx \ H(x)\rho(x)
+U = \langle H(x) \rangle_H = \int_\Gamma dx \ H(x)\rho_H(x)
 $$
 
 である．期待値（＝1次モーメント）だけでなく， $n$ 次のモーメントも求めることができる．物理量 $A$ の2次の（中心化されていない）モーメントは
 
 $$
-\langle A^2 \rangle = \int_\Gamma dx \ A(x)^2\rho(x)
+\langle A^2 \rangle_H = \int_\Gamma dx \ A(x)^2\rho_H(x)
 $$
 
 となる．1次と2次のモーメントを使えば分散（2次の中心化モーメント）を求めることができる．
 
 $$
- \mathrm{Var}[A(x)] = \langle A^2 \rangle - \langle A \rangle^2
+ \mathrm{Var}_H[A(x)] = \langle A^2 \rangle_H - \langle A \rangle_H^2
 $$
 
 
@@ -85,11 +85,12 @@ $$
 
 ## キュムラント母関数とその微分係数
 
-確率密度関数 $\rho(x)$ と確率変数 $A(x)$ が決まれば，各種の母関数（確率母関数，モーメント母関数，キュムラント母関数，特性関数）が決まるはず．そこで，モーメント母関数とキュムラント母関数を求めてみる．確率変数 $A(x)$ のモーメント母関数 $M_A(t)$ は $e^{tA(x)}$の期待値である．
+確率密度関数 $\rho_H(x)$ と確率変数 $A(x)$ が決まれば，各種の母関数（確率母関数，モーメント母関数，キュムラント母関数，特性関数）が決まるはず．そこで，モーメント母関数とキュムラント母関数を求めてみる．確率変数 $A(x)$ のモーメント母関数 $M_A(t)$ は $e^{tA(x)}$の期待値である．
 
 $$
 \begin{eqnarray}
-M_A(t) &= \int_\Gamma dx \ e^{tA(x)}\rho(x) 
+M_A(t) &= \langle e^{tA(x)} \rangle_H
+\newline &= \int_\Gamma dx \ e^{tA(x)}\rho_H(x) 
 \newline &= \int_\Gamma dx \ e^{tA(x)}\frac{e^{-\beta H(x)}}{Z[H]} 
 \newline &= \frac{1}{Z[H]}\int_\Gamma dx \ e^{-\beta\left(H(x) - \displaystyle\frac{t}{\beta}A(x)\right)} 
 \newline &= \frac{Z\left[H-\displaystyle\frac{t}{\beta}A\right]}{Z[H]}
@@ -118,22 +119,24 @@ $$
 
 $$
 \begin{align}
-\newline &= -\frac{1}{Z(\beta)}\frac{\partial Z(\beta)}{\partial \beta}
-\newline &= -\frac{1}{Z(\beta)}\frac{\partial}{\partial \beta} \int_\Gamma dx e^{-\beta H(x)}
-\newline &= \frac{1}{Z(\beta)} \int_\Gamma dx \  H(x) e^{-\beta H(x)}
-\newline &= \int_\Gamma dx \ H(x) \rho_\beta(x)
+\newline &= \left.\frac{1}{\beta}\frac{1}{Z[H-\lambda A]}\frac{\partial Z[H-\lambda A]}{\partial \lambda} \right\vert_{\lambda=0}  
+\newline &= \left.\frac{1}{\beta}\frac{1}{Z[H-\lambda A]}\frac{\partial}{\partial\lambda}   \int_\Gamma dx\ e^{-\beta (H(x) - \lambda A(x))} \right\vert_{\lambda=0}
+\newline &= \left.\frac{1}{\beta}\frac{1}{Z[H-\lambda A]} \int_\Gamma dx\ \beta A(x)e^{-\beta (H(x) - \lambda A(x))} \right\vert_{\lambda=0}
+\newline &= \left.\frac{1}{Z[H-\lambda A]}\int_\Gamma dx\ A(x)e^{-\beta (H(x) - \lambda A(x))} \right\vert_{\lambda=0}
+\newline &= \frac{1}{Z[H]}\int_\Gamma dx\ A(x)e^{-\beta H(x)} 
+\newline &= \langle A \rangle_H
 \end{align}
 $$
 
 となり，確かに $H(x)$ の期待値になっている．
 
-2次中心化モーメントも分配関数の偏微分で書けることがわかる．
+2次中心化モーメントも対数分配関数の偏微分で書けることがわかる．
 
 $$
 \begin{align}
-\mathrm{Var}_\beta[A(x)] &= \left.\frac{\partial^2 K_H(t)}{\partial t^2} \right\vert_{t=0} 
-\newline &= \left.\frac{\partial^2 \ln Z(t-\beta)}{\partial t^2} \right\vert_{t=0}  
-\newline &= \frac{\partial^2 \ln Z(\beta)}{\partial \beta^2} 
+\mathrm{Var}[A] &= \left.\frac{\partial^2 K_A(t)}{\partial t^2} \right\vert_{t=0} 
+\newline &= \left.\frac{\partial^2}{\partial t^2} \ln Z\left[H-\frac{t}{\beta}A\right] \right\vert_{t=0}  
+\newline &= \left.\frac{1}{\beta^2}\frac{\partial^2}{\partial \lambda^2} \ln Z\left[H-\lambda A\right] \right\vert_{\lambda=0}  
 \end{align}
 $$
 
