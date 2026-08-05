@@ -194,10 +194,18 @@ $$
 分配関数 $Z(\beta)$ の対数 $\ln Z(\beta)$ は，ヘルムホルツ自由エネルギー $F$ と次のような関係にある．
 
 $$
-F(\beta) = -\frac{1}{\beta} \ln Z(\beta)
+F[H] = -\frac{1}{\beta} \ln Z[H]
 $$
 
-しかし，なんでそうなるのかはこの時点では説明できない．ちなみに， $\ln Z(\beta)$ にはマシュー関数という名前がついているらしい．
+しかし，なんでそうなるのかはこの時点では説明できない．ちなみに， $\ln Z(\beta)$ にはマシュー関数という名前がついているらしい．先に確認した摂動と期待値・分散の関係を使うと
+
+$$
+\begin{align}
+\frac{\partial F}{\partial \lambda_i} = -\langle A_i \rangle
+\newline
+\frac{\partial^2 F}{\partial \lambda_i\partial \lambda_j} = \beta\mathrm{Cov}[A_i, A_j]
+\end{align}
+$$
 
 ## [揺動散逸定理](fdt)
 
