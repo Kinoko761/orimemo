@@ -140,6 +140,33 @@ $$
 \end{align}
 $$
 
+## 摂動を考える
+
+最初からハミルトニアンに対する摂動を考えて，話を逆向きにたどってみる．ハミルトニアンが
+
+$$
+H(x) + \lambda_1 A_1(x) + \lambda_2 A_2(x) + ...
+$$
+
+で表されるとき，分配関数はもちろん
+
+$$
+Z[H - \lambda_1 A_1 - \lambda_2 A_2 + ...]
+$$
+
+となり，その対数を偏微分すると
+
+$$
+\begin{align}
+\frac{\partial}{\partial \lambda_i} \ln Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]
+&= \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]}\frac{\partial}{\partial \lambda_i} Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]
+\newline &= \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]}\frac{\partial}{\partial \lambda_i} \int_\Gamma dx \ e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &= \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]}\int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &= \beta\langle A_i\rangle_{H + \lambda_1 A_1 + ...}
+\end{align}
+$$
+
+
 ## ヘルムホルツ自由エネルギーとの関係
 
 分配関数 $Z(\beta)$ の対数 $\ln Z(\beta)$ は，ヘルムホルツ自由エネルギー $F$ と次のような関係にある．
