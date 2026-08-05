@@ -145,16 +145,16 @@ $$
 最初からハミルトニアンに対する摂動を考えて，話を逆向きにたどってみる．ハミルトニアンが
 
 $$
-H(x) + \lambda_1 A_1(x) + \lambda_2 A_2(x) + ...
+H(x) - \lambda_1 A_1(x) - \lambda_2 A_2(x) - ...
 $$
 
 で表されるとき，分配関数はもちろん
 
 $$
-Z[H - \lambda_1 A_1 - \lambda_2 A_2 + ...]
+Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]
 $$
 
-となり，その対数を偏微分すると
+となり，その対数を $\lambda_i$ で偏微分すると
 
 $$
 \begin{align}
@@ -166,6 +166,23 @@ $$
 \end{align}
 $$
 
+もう一回 $\lambda_j$ で偏微分すると
+
+$$
+\begin{align}
+&\frac{\partial}{\partial \lambda_j}  \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]}\int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &= \left( \frac{\partial}{\partial \lambda_j} \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]} \right) \int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &\qquad +
+\frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]}\left( \frac{\partial}{\partial \lambda_j} \int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)} \right)
+\newline &= \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]^2} \frac{-\partial Z[H - \lambda_1 A_1 - ...]}{\partial \lambda_j} \int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &\qquad +
+\frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]} \int_\Gamma dx \ \beta^2 A_i(x)A_j(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &= -\frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]^2} \int_\Gamma dx \ \beta A_j(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)} \int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &\qquad +
+\frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]} \int_\Gamma dx \ \beta^2 A_i(x)A_j(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
+\newline &= -\beta^2 \langle A_i(x) \rangle \langle A_j(x) \rangle + \beta^2\langle A_i(x)A_j(x) \rangle
+\end{align}
+$$
 
 ## ヘルムホルツ自由エネルギーとの関係
 
