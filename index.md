@@ -207,6 +207,15 @@ $$
 \end{align}
 $$
 
+なので，摂動1と摂動2による自由エネルギーの変化を二次まで近似すると
+
+$$
+\begin{align}
+\Delta F &\simeq \frac{\partial F}{\partial \lambda_1}\Delta \lambda_1 + \frac{\partial F}{\partial \lambda_2}\Delta \lambda_2 + \frac{1}{2}\left[ \frac{\partial^2 F}{\partial \lambda_1^2} (\Delta \lambda_1)^2 + 2\frac{\partial^2 F}{\partial \lambda_1 \partial \lambda_2} (\Delta \lambda_1)(\Delta \lambda_2) + \frac{\partial^2 F}{\partial \lambda_2^2} (\Delta \lambda_2)^2 \right]
+\newline &= \langle A_1 \rangle\Delta \lambda_1 + \langle A_2 \rangle\Delta \lambda_2 + \frac{1}{2}\left[ \mathrm{Var}[A_1](\Delta \lambda_1)^2 + 2\mathrm{Cov}[A_1,A_2](\Delta \lambda_1)(\Delta \lambda_2) + \mathrm{Var}[A_2](\Delta \lambda_2)^2 \right]
+\end{align}
+$$
+
 ## [揺動散逸定理](fdt)
 
 
