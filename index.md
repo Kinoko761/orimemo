@@ -180,9 +180,12 @@ $$
 \newline &= -\frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]^2} \int_\Gamma dx \ \beta A_j(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)} \int_\Gamma dx \ \beta A_i(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
 \newline &\qquad +
 \frac{1}{Z[H - \lambda_1 A_1 - \lambda_2 A_2 - ...]} \int_\Gamma dx \ \beta^2 A_i(x)A_j(x)e^{-\beta (H(x) - \lambda_1 A_1(x) - ...)}
-\newline &= -\beta^2 \langle A_i(x) \rangle \langle A_j(x) \rangle + \beta^2\langle A_i(x)A_j(x) \rangle
+\newline &= -\beta^2 \langle A_i \rangle \langle A_j \rangle + \beta^2\langle A_i A_j \rangle
+\newline &= \beta^2 \left(\langle A_i A_j \rangle - \langle A_i \rangle \langle A_j \rangle\right)
 \end{align}
 $$
+
+ただし $\langle \ \rangle$ の添字 $H-\lambda_1 A_1 - ...$を省略した．
 
 ## ヘルムホルツ自由エネルギーとの関係
 
