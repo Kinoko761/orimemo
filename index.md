@@ -52,36 +52,90 @@ $x$ は位相空間上の点 $(\mathbf{p},\mathbf{q})$ だから多次元( $N$�
 
 確率密度関数 $\rho_H(x)$ が決まったので，累積分布関数が決まるはず．確率論では確率密度関数よりも，それを積分した累積分布関数を考えるほうがいろいろと都合がよい気がする．しかし，ここで考えている確率密度関数の変数 $x$ は多次元ベクトルだから，単純に「 $x \leq x_0$ 」のような大小関係が存在しない．よって「 $-\infty$ から $x_0$ まで積分」みたいなこともできない．この意味では「累積分布関数」に相当するものはないと言える．ただし，「どこからどこまで累積する（積分する）か」を決めればよいわけだから，「 $\Gamma$ の特定の領域 $\Gamma_0 \subset \Gamma$ について積分する」ということはできる．そう考えると，分配関数はボルツマン因子を $\Gamma$ の全領域で積分したものだから，これは「規格化されていない累積分布関数」みたいなものかもしれない．
 
+## 多次元の確率分布
 
-## 期待値とモーメント
+「微視的状態ごとに値が決まる物理量」には，例えば「系全体のエネルギー」とか「2原子間の距離」のような，ただ一つの実数値（スカラー）もあるが，実用上もっと重要になるのは「各原子の座標（$ 3N $次元ベクトル）」のような多次元のベクトルになる．つまり確率変数 $A(x)$ は一般に，位相空間上の一つの点 $x$ に対して $N$ 次元のベクトル $\mathbf{a}$ を対応させる写像になる．このような確率変数を $N$ 次元確率変数（確率変数ベクトル）といい， $A = (A_1, A_2 , ..., A_N)^T in \mathbf{R}^N$で表す．確率変数ベクトルについての統計量を整理しておく．
 
-確率密度関数 $\rho_H(x)$ が決まったので，微視的状態 $x$ ごとに決まる物理量 $A(x)$ の期待値は
+### 期待値（1階テンソル）
 
-$$
-\langle A \rangle_H = \int_\Gamma dx \ A(x)\rho_H(x)
-$$
-
-のように書ける（物理では $A$ の期待値を $\mathrm{E}[A]$ のかわりに $\langle A \rangle$ で表す）．実験的に決定されるマクロな物理量は，すべて期待値である．特に，ハミルトニアン $H(x)$ の期待値は内部エネルギー $U$ と呼ばれていて
+まず，確率変数 $A(x)$ がただ一つの実数値を返す場合を考える．確率密度関数 $\rho_H(x)$ のもとで $A(x)$ の期待値（1次モーメント）は
 
 $$
-U = \langle H(x) \rangle_H = \int_\Gamma dx \ H(x)\rho_H(x)
+\mathbf{E}_H [A]  = \int_\Gamma dx \ A(x)\rho_H(x)
 $$
 
-である．期待値（＝1次モーメント）だけでなく， $n$ 次のモーメントも求めることができる．物理量 $A$ の2次の（中心化されていない）モーメントは
+であった．実験的に決定されるマクロな物理量は，すべて期待値である．特に，ハミルトニアン $H(x)$ の期待値は内部エネルギー $U$ と呼ばれていて
 
 $$
-\langle A^2 \rangle_H = \int_\Gamma dx \ A(x)^2\rho_H(x)
+U = \mathbf{E}_H [H] = \int_\Gamma dx \ H(x)\rho_H(x)
 $$
 
-となる．1次と2次のモーメントを使えば分散（2次の中心化モーメント）を求めることができる．
+である．次に，確率変数ベクトル $A(x)$ の期待値は，各成分の期待値を並べたベクトルである．
 
 $$
- \mathrm{Var}_H[A(x)] = \langle A^2 \rangle_H - \langle A \rangle_H^2
+\mathbf{E}_H [A] = \mathbf{E}\left[
+\begin{pmatrix}
+   A_1 \\
+   A_2 \\
+   \vdots \\
+   A_N 
+\end{pmatrix}
+\right]
+\newline = \begin{pmatrix}
+   \mathbf{E}[A_1] \\
+   \mathbf{E}[A_2] \\
+   \vdots \\
+   \mathbf{E}[A_N] 
+\end{pmatrix}
 $$
 
+### 二次モーメント（2階テンソル）
 
+まず，確率変数 $A(x)$ がただ一つの実数値を返す場合を考える．確率密度関数 $\rho_H(x)$ のもとで $A(x)$ の2次モーメントは $A(x)^2$ の期待値のことであり
 
+$$
+\mathbf{E}_H [A^2]  = \int_\Gamma dx \ A(x)^2\rho_H(x)
+$$
 
+であった．次に，確率変数ベクトル $A(x)$ の2次モーメントは，テンソル積 $A(x)\otimes A(x)$ の期待値のことであり
+
+$$
+\begin{align}
+\mathbf{E}_H [A\otimes A]  &= \mathbf{E}_H[AA^T]
+\newline &= \mathbf{E}_H
+\left[
+\begin{pmatrix}
+   A_1 \\
+   A_2 \\
+   \vdots \\
+   A_N 
+\end{pmatrix}
+\begin{pmatrix}
+   A_1 & A_2 & \dots & A_N 
+\end{pmatrix}
+\right]
+\newline &= \mathbf{E}_H
+\left[
+\begin{pmatrix}
+   A_1 A_1 & A_1 A_2 & \dots & A_1 A_N\\
+   A_2 A_1 & A_2 A_2 & \dots & A_2 A_N\\
+   \vdots  &         &       &        \\
+   A_N A_1 & A_N A_2 & \dots & A_N A_N\\
+\end{pmatrix}
+\right]
+\newline &= 
+\begin{pmatrix}
+   \mathbf{E}_H[A_1 A_1] & \mathbf{E}_H[A_1 A_2] & \dots & \mathbf{E}_H[A_1 A_N]\\
+   \mathbf{E}_H[A_2 A_1] & \mathbf{E}_H[A_2 A_2] & \dots & \mathbf{E}_H[A_2 A_N]\\
+   \vdots  &         &       &  \vdots      \\
+   \mathbf{E}_H[A_N A_1] & \mathbf{E}_H[A_N A_2] & \dots & \mathbf{E}_H[A_N A_N]\\
+\end{pmatrix}
+\end{align}
+$$
+
+となる．つまり，確率変数ベクトルに対する二次モーメントは行列（分散共分散行列）になる．対角項は通常の意味での分散 $\mathbf{E}_H [A_i^2]$ である．非対角項 $\mathbf{E}_H [A_i A_j]$ は共分散と呼ばれる．
+
+### 分散（二次中心化モーメント）
 
 ## キュムラント母関数とその微分係数
 
