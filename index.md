@@ -89,7 +89,7 @@ $$
 \end{pmatrix}
 $$
 
-### 二次モーメント（2階テンソル）
+### 2次モーメント（2階テンソル）
 
 まず，確率変数 $A(x)$ がただ一つの実数値を返す場合を考える．確率密度関数 $\rho_H(x)$ のもとで $A(x)$ の2次モーメントは $A(x)^2$ の期待値のことであり
 
@@ -135,7 +135,57 @@ $$
 
 となる．つまり，確率変数ベクトルに対する二次モーメントは行列（分散共分散行列）になる．対角項は通常の意味での分散 $\mathbf{E}_H [A_i^2]$ である．非対角項 $\mathbf{E}_H [A_i A_j]$ は共分散と呼ばれる．
 
-### 分散（二次中心化モーメント）
+### 分散（2次中心化モーメント）
+
+まず，確率変数 $A(x)$ がただ一つの実数値を返す場合を考える．確率密度関数 $\rho_H(x)$ のもとで $A(x)$ の分散（2次中心化モーメント） $\mathbf{V}_H[A]$ は $\left( A(x)-\mathbf{E}_H[A] \right)^2$ の期待値のことであり
+
+$$
+\begin{align}
+\mathbf{V}_H [A] &= \mathbf{E}_H [\left( A(x)-\mathbf{E}_H[A] \right)^2] 
+\newline &= \mathbf{E}_H [A(x)^2-2\mathbf{E}_H[A]A(x) +  \mathbf{E}_H[A]^2] 
+\newline &= \mathbf{E}_H [A(x)^2] -2\mathbf{E}_H[A] \mathbf{E}_H[A(x)] +  \mathbf{E}_H[A]^2
+\newline &= \mathbf{E}_H [A(x)^2] -\mathbf{E}_H[A]^2
+\end{align}
+$$
+
+のように，（2次モーメント）－（1次モーメント） $^2$ という公式があった．同様に，確率変数ベクトル $A(x)$ の分散はテンソル積 $(A(x)-\mathbf{E}_H[A])\otimes (A(x)-\mathbf{E}_H[A])$ の期待値のことであり
+
+
+$$
+\begin{align}
+\mathbf{V}[A] &= \mathbf{E}_H [(A-\mathbf{E}_H[A])\otimes (A-\mathbf{E}_H[A])]  
+\newline &= \mathbf{E}_H[(A-\mathbf{E}_H[A])(A-\mathbf{E}_H[A])^T]
+\newline &= \mathbf{E}_H
+\left[
+\begin{pmatrix}
+   A_1 - \mathbf{E}_H[A_1] \\
+   A_2 - \mathbf{E}_H[A_2] \\
+   \vdots \\
+   A_N - \mathbf{E}_H[A_N] 
+\end{pmatrix}
+\begin{pmatrix}
+   A_1 - \mathbf{E}_H[A_1] & A_2  - \mathbf{E}_H[A_2] & \dots & A_N  - \mathbf{E}_H[A_N]
+\end{pmatrix}
+\right]
+\newline &= \mathbf{E}_H
+\left[
+\begin{pmatrix}
+   (A_1 - \mathbf{E}_H[A_1]) (A_1 - \mathbf{E}_H[A_1]) & (A_1 - \mathbf{E}_H[A_1]) (A_2 - \mathbf{E}_H[A_2]) & \dots & (A_1 - \mathbf{E}_H[A_1]) (A_N - \mathbf{E}_H[A_N])\\
+   (A_2 - \mathbf{E}_H[A_2]) (A_1 - \mathbf{E}_H[A_1]) & (A_2 - \mathbf{E}_H[A_2]) (A_2 - \mathbf{E}_H[A_2]) & \dots & (A_2 - \mathbf{E}_H[A_2]) (A_N - \mathbf{E}_H[A_N])\\
+   \vdots  &         &       &        \\
+   (A_N - \mathbf{E}_H[A_N]) (A_1 - \mathbf{E}_H[A_1]) & (A_N - \mathbf{E}_H[A_N]) (A_2 - \mathbf{E}_H[A_2]) & \dots & (A_N - \mathbf{E}_H[A_N]) (A_N - \mathbf{E}_H[A_N])\\
+\end{pmatrix}
+\right]
+\newline &= 
+\begin{pmatrix}
+   \mathbf{V}_H[A_1, A_1] & \mathbf{V}_H[A_1, A_2] & \dots & \mathbf{V}_H[A_1, A_N]\\
+   \mathbf{V}_H[A_2, A_1] & \mathbf{V}_H[A_2, A_2] & \dots & \mathbf{V}_H[A_2, A_N]\\
+   \vdots  &         &       &  \vdots      \\
+   \mathbf{V}_H[A_N, A_1] & \mathbf{V}_H[A_N, A_2] & \dots & \mathbf{V}_H[A_N, A_N]\\
+\end{pmatrix}
+\end{align}
+$$
+
 
 ## キュムラント母関数とその微分係数
 
