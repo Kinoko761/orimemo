@@ -139,7 +139,7 @@ $$
 $$
 \begin{align}
 \mathbf{V}_H [A] &= \mathbf{E}_H [\left( A(x)-\mathbf{E}_H[A(x)] \right)^2] 
-\newline &= \mathbf{E}_H [A(x)^2] -2\mathbf{E}_H[A] \mathbf{E}_H[A(x)] +  \mathbf{E}_H[A(x)]^2
+\newline &= \mathbf{E}_H [A(x)^2] -2\mathbf{E}_H[A(x)] \mathbf{E}_H[A(x)] +  \mathbf{E}_H[A(x)]^2
 \newline &= \mathbf{E}_H [A(x)^2] -\mathbf{E}_H[A(x)]^2
 \end{align}
 $$
